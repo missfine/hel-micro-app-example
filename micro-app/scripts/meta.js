@@ -16,6 +16,7 @@ helDevUtils.extractHelMetaJson({
     subApp,
     buildDirFullPath: path.join(__dirname, '../hel_dist'),
     packageJson,
+    enableRelativePath: true,
 }).catch(err => {
     console.error(err);
     process.exit(-1);

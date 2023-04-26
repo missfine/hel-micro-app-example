@@ -43,7 +43,7 @@
         "check_name": "node scripts/check.js",
         "build_dist": "craco build",
         "build_meta": "node scripts/meta.js",
-        "build_proxy": "npm run build_proxy_umd && npm run build_proxy_es && cp ./hel_proxy/entry.js ./hel_dist",
+        "build_proxy": "npm run build_proxy_umd && npm run build_proxy_es && cross-env-shell  cp ./hel_proxy/entry.js ./hel_dist",
         "build_proxy_umd": "tsc & node ./scripts/replaceToRelativePath.js && rollup -c",
         "build_proxy_es": "tsc & node ./scripts/replaceToRelativePath.js && cross-env BUILD_ENV=es rollup -c",
         "set_home_page": "cross-env-shell HEL_APP_HOME_PAGE=http://127.0.0.1:8080",
