@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button, message, Modal } from 'antd';
+
 import MicroApp from './entry';
+import { ModalInfo, DirectExportModalInfo, UseBeforeExportModalInfo, TabModalInfo } from 'src/modals';
 
 import './App.scss';
 
@@ -10,9 +12,14 @@ message.config({
     maxCount: 3,
 });
 
+const { TabModal, DirectExportModal, UseBeforeExportModal } = MicroApp;
+
 export default () => {
 
-    const { TabModal, DirectExportModal, UseBeforeExportModal } = MicroApp;
+    useEffect(() => {
+        //结果为true
+        console.log('主应用import的Modal与window.antd.Modal是否一致', Modal === window.antd.Modal);
+    }, []);
 
     useEffect(() => {
         console.log('MicroApp', { ...MicroApp });
@@ -115,6 +122,47 @@ export default () => {
                     >
                         测试对话框内容
                     </UseBeforeExportModal>
+                </div>
+                <div className="title">
+                    从微模块导入的各种Modal.info()
+                </div>
+                <div className="components-inline">
+                    <Button
+                        onClick={() => ModalInfo({
+                            title: 'Info对话框',
+                            content: 'Info对话框',
+                            maskClosable: true,
+                        })}
+                    >
+                        ModalInfo
+                    </Button>
+                    <Button
+                        onClick={() => DirectExportModalInfo({
+                            title: 'Info对话框',
+                            content: 'Info对话框',
+                            maskClosable: true,
+                        })}
+                    >
+                        DirectExportModalInfo
+                    </Button>
+                    <Button
+                        onClick={() => UseBeforeExportModalInfo({
+                            title: 'Info对话框',
+                            content: 'Info对话框',
+                            maskClosable: true,
+                        })}
+                    >
+                        UseBeforeExportModalInfo
+                    </Button>
+                    <Button
+                        onClick={() => TabModalInfo({
+                            title: 'Info对话框',
+                            content: 'Info对话框',
+                            maskClosable: true,
+                        })}
+                    >
+                        TabModalInfo
+                    </Button>
                 </div>
             </div>
         </div>

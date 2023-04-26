@@ -10,8 +10,7 @@
 | @date: 2022-06-05
 |--------------------------------------------------------------------------
 */
-import { libReady } from 'hel-lib-proxy';
-import { isSubApp } from 'hel-iso';
+import { isSubApp, libReady } from 'hel-lib-proxy';
 import { bindReactRuntime, /*preFetchLib*/ } from 'hel-micro';
 import React from 'react';
 import ReactDOM from 'react-dom';

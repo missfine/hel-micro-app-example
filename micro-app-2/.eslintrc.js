@@ -52,6 +52,6 @@ module.exports = {
 		'no-var': 2,
 		//禁止出现未使用过的变量
 		'no-unused-vars': 1,
-		// 'no-console': 1,
+		'no-console': 1,
 	},
 };

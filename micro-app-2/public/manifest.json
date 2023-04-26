@@ -1,6 +1,6 @@
 {
-    "short_name": "base-app",
-    "name": "base-app",
+    "short_name": "micro-app",
+    "name": "micro-app",
     "icons": [
     ],
     "start_url": ".",

@@ -1,0 +1,78 @@
+.components-test {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: scroll;
+
+    .input-small {
+        width: 200px;
+    }
+
+    .input-middle {
+        width: 400px;
+    }
+
+    .input-large {
+        width: 800px;
+    }
+
+    .title {
+        width: 100%;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bolder;
+    }
+
+    .components-inline {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        .components-inline-adaptive {
+            flex: 1;
+        }
+    }
+
+    .input-text {
+        min-width: 96px;
+        max-width: 160px;
+        font-weight: bolder;
+    }
+
+    .loading-div {
+        width: 120px;
+    }
+
+    .float-content {
+        width: 120px;
+        height: 48px;
+        background-color: black;
+        opacity: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .confirm-content-example {
+        border: 1px solid black;
+    }
+
+    .user-select {
+        width: 200px;
+
+        &.multiple {
+            width: 400px;
+        }
+    }
+
+    .organization-select {
+        width: 200px;
+
+        &.multiple {
+            width: 400px;
+        }
+    }
+}
