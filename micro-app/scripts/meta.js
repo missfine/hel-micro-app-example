@@ -8,6 +8,7 @@
 const process = require('process');
 const path = require('path');
 const helDevUtils = require('hel-dev-utils');
+
 const packageJson = require('../package.json');
 const subApp = require('../config/subApp');
 
