@@ -7,15 +7,19 @@ const appDirectory = fs.realpathSync(process.cwd());
 const subApp = require('./config/subApp');
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
-const configureWebpack = (webpackConfig) => {
+// const publicUrlOrPath = subApp.getPublicPathOrUrl('http://localhost:9000');
+const publicUrlOrPath = 'http://localhost:9000/';
 
-    console.log('config', subApp.getPublicPathOrUrl('http://localhost:9000'));
+const configureWebpack = (webpackConfig, { paths }) => {
+
+    paths.publicUrlOrPath = publicUrlOrPath;
+    paths.appBuild = resolveApp(subApp.distDir);
 
     webpackConfig.output = {
         ...webpackConfig.output,
-        path: resolveApp(subApp.distDir),
-        // publicPath: subApp.getPublicPathOrUrl('http://localhost:9000'),
-        chunkLoadingGlobal: subApp.jsonpFnName
+        path: paths.appBuild,
+        publicPath: publicUrlOrPath,
+        chunkLoadingGlobal: subApp.jsonpFnName,
     };
     webpackConfig.externals = {
         ...webpackConfig.externals,
@@ -45,6 +49,12 @@ module.exports = {
             'Access-Control-Allow-Credentials': 'true',
         },
         open: [],
+        static: {
+            publicPath: [ publicUrlOrPath ],
+        },
+        devMiddleware: {
+            publicPath: publicUrlOrPath.slice(0, -1),
+        },
         // hot: false,
         // liveReload: true,
     },
