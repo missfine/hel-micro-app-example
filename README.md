@@ -1,10 +1,10 @@
-# 基础系统平台
+# hel微模块
 
 ## 可用脚本
 
 可以在项目中运行以下命令：
 
-### `yarn install --registry http://npm.repository.devops/`
+### `yarn install`
 
 使用该命令安装依赖, 部分依赖仅在私服中存在
 
@@ -19,7 +19,8 @@
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
+information.
 
 ## 更多
 
@@ -49,6 +50,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved
+here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
 # hel-micro-app-example
+
 # hel-micro-app-example
